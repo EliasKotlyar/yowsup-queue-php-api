@@ -1,0 +1,24 @@
+{
+  "name":"twinsen/yowsup-queue",
+  "type":"library",
+  "license":"OSL-3.0",
+  "homepage":"http://twinsen.de",
+  "description":"API for the yowsup Project",
+  "version": "1.0.0",
+  "authors":[
+    {
+      "name":"Elias Kotlyar",
+      "email":"elias.kotlyar@gmail.com"
+    }
+  ],
+  "require":{
+    "pda/pheanstalk": "v3.0.2"
+  },
+  "require-dev":{
+  },
+  "autoload": {
+    "psr-4": {
+      "Twinsen\\YowsupQueue\\": ["src/"]
+    }
+  }
+}
