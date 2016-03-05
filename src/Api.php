@@ -1,5 +1,6 @@
 <?php
 namespace Twinsen\YowsupQueue;
+use Twinsen\YowsupQueue\Models\MessageInterface;
 use Twinsen\YowsupQueue\Models\SimpleMessage;
 use Pheanstalk\Pheanstalk;
 
@@ -14,9 +15,12 @@ class Api
         $this->connection = new Pheanstalk($host,$port);
     }
 
-    public function sendSimpleMessage(SimpleMessage $message){
+    public function sendMessage(MessageInterface $message){
+        $messageTxt = $message->toJson();
+        $messageTxt = utf8_decode($messageTxt);
+        echo $messageTxt;
         $this->connection
             ->useTube($this->sendQueueName)
-            ->put($message->toJson());
+            ->put($messageTxt);
     }
 }

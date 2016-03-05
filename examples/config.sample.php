@@ -1,4 +1,4 @@
 <?php
-$host = "myhost";
+$host = "localhost";
 $port = "11300";
-$sendTestNumber = "49125123123123";
+$sendTestNumber = "<number>@s.whatsapp.net";
